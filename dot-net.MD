@@ -1,4 +1,9 @@
 # Coding standards
+  * [Global coding standards](#global-coding-standards)
+  * [Layer coding standards](#layer-coding-standards)
+  * [Repository coding standards](#repository-coding-standards)
+  * [Unit and integration testing guidelines](#unit-and-integration-testing-guidelines)
+
 
 ## Global coding standards(these do not apply to Javascript)
   * Pascal case for class and method names
