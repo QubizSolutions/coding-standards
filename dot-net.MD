@@ -1,7 +1,6 @@
 # Coding standards
 This document intends to bring out the key points to follow by the development team. Everyone should adhere to these as we do not want to have multiple formats of the code spread around the entire solution/teams. There is no priority set on the below items. All are to be considered equal. Keep it clean and simple!
   * [Global coding standards](#global-coding-standards)
-  * [Layer coding standards](#layer-coding-standards)
   * [Repository coding standards](#repository-coding-standards)
   * [Unit and integration testing guidelines](#unit-and-integration-testing-guidelines)
 
@@ -82,10 +81,8 @@ This document intends to bring out the key points to follow by the development t
       * The duration of queries has not increased
   * Check local event logs to ensure no errors are being logged related to your changes
   * While using TFS, when in need of moving files, use the Move function such that history on the files is kept for historical purposes
-
-## Layer coding standards(this applies to each layer of the application)
-  * Each layer should **accept** and **return** its own ***data types***
-
+  * Each application layer should **accept** and **return** its own ***data types***
+      * this will spare you the pain for when you need to add new information on the UI based on what you already have in the database as it will not cause your database to change as well
 
 ## Repository coding standards
   * Repository method naming conventions are as follows(try and follow them as much as possible, exceptions might occur):
