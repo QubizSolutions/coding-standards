@@ -169,32 +169,31 @@ Examples contain references to [Moq](https://github.com/moq/moq4) which is the m
     ```
   
   * Keep unit tests small, test **ONLY ONE** specific scenario. Try not to test the same thing multiple times. Unit tests should be quick to write and easy to maintain
-  * Mocking should be used where possible so that only the specific code being tested needs to be executed
-  * Mocked objects should reflect as much as possible what the real object would return
+  * Only data access should be mocked
   * Every mocked object should be prefixed with **Mock** and declared as a ***private field***
   * Use **MockBehavior.Strict** whenever possible and verify them all at the end of each test
-  * Always use the TestInitialize and TestCleanup methods to instantiate mocked objects and the tested object and respectively verify all mocks
+  * Always use the TestInitialize and TestCleanup to instantiate/verify mocked objects
 
     ``` c#
     [TestClass]
     public class FooTest
     {
-        private Mock<IBar> barMock;
+        private Mock<IBarResource> barResourceMock;
         
         private Foo foo;
     
         [TestInitialize]
         public void TestInitialize()
         {
-            barMock = new Mock<IBar>(MockBehavior.Strict);
+            barResourceMock = new Mock<IBarResource>(MockBehavior.Strict);
             
-            foo = new Foo(barMock.Object);
+            foo = new Foo(barResourceMock.Object);
         }
         
         [TestCleanup]
         public void TestCleanup()
         {
-            barMock.VerifyAll();
+            barResourceMock.VerifyAll();
         }
     }
     ```
