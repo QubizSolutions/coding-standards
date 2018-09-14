@@ -9,7 +9,7 @@ This document intends to bring out the key points to follow by the development t
   * Pascal case for class and method names
   * Camel case for local variables, parameters and private variables
   * No code comments - Following agile practices the names of your interfaces / classes / methods / variables should communicate their purpose and intended usage
-  * Naming should come from the *ubiquitous language*! If the business people are naming an entity Employee, the corresponding to it should also be called Employee. Otherwise developers will always have to translate between the two.
+  * Naming should come from the **ubiquitous language**! If the business people are naming an entity Employee, the corresponding to it should also be called Employee. Otherwise developers will always have to translate between the two.
   * Variables / parameters should contain the class name in them(it also simplifies renaming)
     ``` c#
     public class Foo
