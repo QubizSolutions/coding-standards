@@ -175,6 +175,7 @@ Examples contain references to [Moq](https://github.com/moq/moq4) which is the m
   * Keep unit tests small, test **ONLY ONE** specific scenario. Try not to test the same thing multiple times. Unit tests should be quick to write and easy to maintain
   * Test for the business scenarios not the underlying code
   * Only data access should be mocked
+  * The service layer should be tested withot mocking its dependencies(except data access). Doing it this way, when moving code around you wont't have to change tests
   * Every mocked object should be prefixed with **Mock** and declared as a ***private field***
   * Use **MockBehavior.Strict** whenever possible and verify them all at the end of each test
   * Always use the TestInitialize and TestCleanup to instantiate/verify mocked objects
