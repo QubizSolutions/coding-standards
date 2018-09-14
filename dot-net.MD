@@ -1,4 +1,5 @@
 # Coding standards
+This document intends to bring out the key points to follow by the development team. Everyone should adhere to these as we do not want to have multiple formats of the code spread around the entire solution/teams. There is no priority set on the below items. All are to be considered equal. Keep it clean and simple!
   * [Global coding standards](#global-coding-standards)
   * [Layer coding standards](#layer-coding-standards)
   * [Repository coding standards](#repository-coding-standards)
