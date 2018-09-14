@@ -90,7 +90,9 @@ This document intends to bring out the key points to follow by the development t
     
     public class PersonViewModel
     {   
-        public int Age { get; set; } // as we need to show the Age not the birth date, we need this new property. Having it on PersonEntity would change the database as there is a 1:1 mapping 
+        // as we need to show the Age not the birth date, we need this new property.
+        // Having it on PersonEntity would change the database as there is a 1:1 mapping
+        public int Age { get; set; }
     }
     ```
 
