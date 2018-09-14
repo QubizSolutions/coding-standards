@@ -37,12 +37,36 @@ This document intends to bring out the key points to follow by the development t
         
         public Foo(IBar bar)
         {
-            this.bar = bar;
+            this.bar = bar; // this is the only place where you can use 'this'
+        }
+        
+        public void Work()
+        {
+            bar.DoWork(); // do not use 'this' here as there is no point to it
         }
     }
     ```
 
   * When checking if a **Nullable< T >** has a value assigned, use **Nullable< T >.HasValue**
+    ``` c#
+    public class Foo
+    {   
+        public void Work()
+        {
+            int? x = null;
+            
+            if (x.HasValue)
+            {
+                // do something
+            }
+            else
+            {
+                // do something else
+            }
+        }
+    }
+    ```
+
   * Use the **AutoMapper** extensions,  **.DeepCopyTo< T >** and **Map(source, dest)**, whenever possible to streamline the flow. This implies having the same property names on both objects which in fact is a must where possible
 
 ## Layer coding standards(this applies to each layer of the application)
