@@ -91,7 +91,7 @@ This document intends to bring out the key points to follow by the development t
     public class PersonViewModel
     {   
         // as we need to show the Age not the birth date, we need this new property.
-        // Having it on PersonEntity would change the database as there is a 1:1 mapping
+        // having it on PersonEntity would change the database as there is a 1:1 mapping
         public int Age { get; set; }
     }
     ```
@@ -111,15 +111,15 @@ This document intends to bring out the key points to follow by the development t
     }
     ```
 
-    * **Get**: When listing a single object. Append the filter name if applied(Ex: ***GetByID***, ***GetByAdmin***, ***GetByType***, ***GetByAdminAndType***)
+    * **Get**: When listing a single object. Append the filter name if applied(Ex: ***DetailByID***, ***DetailByAdmin***, ***DetailByType***, ***DetailByAdminAndType***)
 
     ``` c#
     public interface IFoo
     {
-        Foo GetByID(Guid id);
-        Foo GetByAdmin(Guid adminID);
-        Foo GetByType(FooType type);
-        Foo GetByAdminAndType(Guid adminID, FooType type);
+        Foo DetailByID(Guid id);
+        Foo DetailByAdmin(Guid adminID);
+        Foo DetailByType(FooType type);
+        Foo DetailByAdminAndType(Guid adminID, FooType type);
     }
     ```
 
