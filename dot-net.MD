@@ -68,7 +68,7 @@ This document intends to bring out the key points to follow by the development t
     ```
 
   * Use the **AutoMapper** extensions,  **.DeepCopyTo< T >** and **Map(source, dest)**, whenever possible to streamline the flow. This implies having the same property names on both objects which in fact is a must where possible
-  * Use **.DeepCopyTo< T >** and **Map(source, dest)**, whenever possible to streamline the flow. This implies having the same property names on both objects which in fact is a must where possible. There are multiple libraries out there like [Runtime Mapper](!https://github.com/aoancea/runtime-mapper)
+  * Use **.DeepCopyTo< T >** and **Map(source, dest)**, whenever possible to streamline the flow. This implies having the same property names on both objects which in fact is a must where possible. There are multiple libraries out there like [Runtime Mapper](#https://github.com/aoancea/runtime-mapper)
 
 ## Layer coding standards(this applies to each layer of the application)
   * Each layer should **accept** and **return** its own ***data types***
