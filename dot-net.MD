@@ -95,6 +95,10 @@ This document intends to bring out the key points to follow by the development t
         public int Age { get; set; }
     }
     ```
+    * Variables should be named to their actual meaning
+    * Empty line and spaces should be removed
+    * Code should be indented - tabs as 4 spaces
+    
 
 ## Repository coding standards
   * Repository method naming conventions are as follows(try and follow them as much as possible, exceptions might occur):
@@ -169,6 +173,7 @@ Examples contain references to [Moq](https://github.com/moq/moq4) which is the m
     ```
   
   * Keep unit tests small, test **ONLY ONE** specific scenario. Try not to test the same thing multiple times. Unit tests should be quick to write and easy to maintain
+  * Test for the business scenarios not the underlying code
   * Only data access should be mocked
   * Every mocked object should be prefixed with **Mock** and declared as a ***private field***
   * Use **MockBehavior.Strict** whenever possible and verify them all at the end of each test
@@ -197,3 +202,5 @@ Examples contain references to [Moq](https://github.com/moq/moq4) which is the m
         }
     }
     ```
+
+  * Use the following example when writting [tests](https://github.com/aoancea/different-approach-towards-unit-testing/blob/master/src/Integration/UnitTesting/InterestV3/Calculator/InterestCalculatorTest.cs)
