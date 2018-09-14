@@ -4,7 +4,6 @@ This document intends to bring out the key points to follow by the development t
   * [Repository coding standards](#repository-coding-standards)
   * [Unit and integration testing guidelines](#unit-and-integration-testing-guidelines)
 
-
 ## Global coding standards
   * Test your code!
   * Pascal case for class and method names
@@ -83,6 +82,17 @@ This document intends to bring out the key points to follow by the development t
   * While using TFS, when in need of moving files, use the Move function such that history on the files is kept for historical purposes
   * Each application layer should **accept** and **return** its own ***data types***
       * this will spare you the pain for when you need to add new information on the UI based on what you already have in the database as it will not cause your database to change as well
+    ``` c#
+    public class PersonEntity
+    {   
+        public DateTime BirthDate { get; set; }
+    }
+    
+    public class PersonViewModel
+    {   
+        public int Age { get; set; } // as we need to show the Age not the birth date, we need this new property. Having it on PersonEntity would change the database as there is a 1:1 mapping 
+    }
+    ```
 
 ## Repository coding standards
   * Repository method naming conventions are as follows(try and follow them as much as possible, exceptions might occur):
