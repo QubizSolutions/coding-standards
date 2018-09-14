@@ -6,7 +6,7 @@ This document intends to bring out the key points to follow by the development t
   * [Unit and integration testing guidelines](#unit-and-integration-testing-guidelines)
 
 
-## Global coding standards(these do not apply to Javascript)
+## Global coding standards
   * Pascal case for class and method names
   * Camel case for local variables, parameters and private variables
   * No code comments - Following agile practices the names of your interfaces / classes / methods / variables should communicate their purpose and intended usage
