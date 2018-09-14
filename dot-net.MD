@@ -7,6 +7,7 @@ This document intends to bring out the key points to follow by the development t
 
 
 ## Global coding standards
+  * Test your code!
   * Pascal case for class and method names
   * Camel case for local variables, parameters and private variables
   * No code comments - Following agile practices the names of your interfaces / classes / methods / variables should communicate their purpose and intended usage
@@ -69,6 +70,18 @@ This document intends to bring out the key points to follow by the development t
 
   * Use the **AutoMapper** extensions,  **.DeepCopyTo< T >** and **Map(source, dest)**, whenever possible to streamline the flow. This implies having the same property names on both objects which in fact is a must where possible
   * Use **.DeepCopyTo< T >** and **Map(source, dest)**, whenever possible to streamline the flow. This implies having the same property names on both objects which in fact is a must where possible. There are multiple libraries out there like [Runtime Mapper](https://github.com/aoancea/runtime-mapper)
+  * Avoid using static classes as they cannot be mocked / dependency injected
+  * When converting DateTimes to and from strings always be explicit about the format, never rely on the machine regional settings
+  * Avoid using DateTime.Now, instead use a wrapper over it which can also be mocked in unit tests. Do the same for other similar generators like Guids, etc
+  * Do not declare variables using var, as it makes the code less readable, but instead use the fully qualified namespace
+  * Do not use the .NET dynamic type, as it makes the code less readable and you do not get intellisense support. Can be used for special cases
+  * Make sure you check for possible impacted areas and test them all out
+  * Check the performance impact of any change
+  * Where applicable, run SQL profiler before checking in to ensure:
+      * The database is not flooded with multiple calls to load the same objects
+      * The duration of queries has not increased
+  * Check local event logs to ensure no errors are being logged related to your changes
+  * While using TFS, when in need of moving files, use the Move function such that history on the files is kept for historical purposes
 
 ## Layer coding standards(this applies to each layer of the application)
   * Each layer should **accept** and **return** its own ***data types***
