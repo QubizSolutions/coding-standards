@@ -30,6 +30,18 @@ This document intends to bring out the key points to follow by the development t
     ```
 
   * Dependency injected variables should be declared as ***private readonly*** and the constructor parameter should have the same name as the variable. Use **this** for variable assignment inside the constructor
+    ``` c#
+    public class Foo
+    {
+        private readonly IBar bar;
+        
+        public Foo(IBar bar)
+        {
+            this.bar = bar;
+        }
+    }
+    ```
+
   * When checking if a **Nullable< T >** has a value assigned, use **Nullable< T >.HasValue**
   * Use the **AutoMapper** extensions,  **.DeepCopyTo< T >** and **Map(source, dest)**, whenever possible to streamline the flow. This implies having the same property names on both objects which in fact is a must where possible
 
