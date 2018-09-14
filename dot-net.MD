@@ -11,21 +11,24 @@ This document intends to bring out the key points to follow by the development t
   * Camel case for local variables, parameters and private variables
   * No code comments - Following agile practices the names of your interfaces / classes / methods / variables should communicate their purpose and intended usage
   * Naming should come from the *ubiquitous language*! If the business people are naming an entity Employee you shoud have in code as such rather than something different. Look below at an example:
-  ``` c#
+    ``` c#
     public class Foo
     {
         void Bar1()
         {
-            User employee = new User(); // class name is User but variable name is employee => not consistent
+            // class name is User but variable name is employee => not consistent
+            User employee = new User();
         }
         
         void Bar2()
         {
-            Employee employee = new Employee(); // class name is Employee and variable name is also employee => consistent
+            // class name is Employee and variable name is also employee => consistent
+            Employee employee = new Employee();
         }
     }
     ```
-        * this helps also in renaming
+
+      * this helps also in renaming
   * Dependency injected variables should be declared as ***private readonly*** and the constructor parameter should have the same name as the variable. Use **this** for variable assignment inside the constructor
   * When checking if a **Nullable< T >** has a value assigned, use **Nullable< T >.HasValue**
   * Use the **AutoMapper** extensions,  **.DeepCopyTo< T >** and **Map(source, dest)**, whenever possible to streamline the flow. This implies having the same property names on both objects which in fact is a must where possible
